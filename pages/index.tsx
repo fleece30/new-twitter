@@ -1,7 +1,9 @@
+import Header from "@/pages/components/Header";
+
 export default function Home() {
   return (
     <>
-      <h1 className={"text-red-500"}>Abhishek</h1>
+      <Header label={"Home"} />
     </>
   );
 }
