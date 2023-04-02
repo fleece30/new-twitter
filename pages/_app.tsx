@@ -1,12 +1,12 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import Layout from "@/pages/components/Layout";
-import LoginModal from "@/pages/components/LoginModal";
+import AuthModal from "@/pages/components/AuthModal";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-      <LoginModal />
+      <AuthModal />
       <Layout>
         <Component {...pageProps} />
       </Layout>

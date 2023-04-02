@@ -1,14 +1,18 @@
-import React from "react";
-import { useRouter } from "next/router";
+import React, { useCallback } from "react";
 import { FaFeather } from "react-icons/all";
+import useAuthModal from "@/hooks/useAuthModal";
 
 interface SidebarTweetButtonProps {}
 
 const SidebarTweetButton: React.FC<SidebarTweetButtonProps> = ({}) => {
-  const router = useRouter();
+  const authModal = useAuthModal();
+
+  const handleClick = useCallback(() => {
+    authModal.setOpen();
+  }, [authModal]);
 
   return (
-    <div onClick={() => router.push("/")}>
+    <div onClick={handleClick}>
       <div
         className={
           "mt-6 lg:hidden rounded-full h-14 w-14 p-4 flex items-center justify-center bg-sky-500 hover:bg-opacity-80 transition cursor-pointer"
